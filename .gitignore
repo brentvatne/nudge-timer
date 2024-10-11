@@ -33,3 +33,7 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# Use CNG
+ios/
+android/
