@@ -27,16 +27,30 @@ export default function Timer() {
   useEffect(() => {
     if (isPaused || isCompleted) return;
 
+    // 🥵🥵🥵🥵🥵🥵🥵🥵🥵
     let lastMeasuredTime = Date.now();
+    let lastElapsedTime = elapsedTime;
     const interval = setInterval(() => {
-      setElapsedTime((t) =>
-        Math.max(t + Date.now() - lastMeasuredTime, timer.duration),
+      const currentTime = Date.now();
+
+      const nextValue = Math.max(
+        lastElapsedTime + (currentTime - lastMeasuredTime),
+        timer.duration,
       );
-      lastMeasuredTime = Date.now();
-    }, 100);
+      setElapsedTime(nextValue);
+      // Don't love this!
+      lastElapsedTime = nextValue;
+
+      // This updates very slowly?
+      // setElapsedTime((t) => {
+      //   return Math.max(t + currentTime - lastMeasuredTime, timer.duration);
+      // });
+
+      lastMeasuredTime = currentTime;
+    }, 32);
 
     return () => clearInterval(interval);
-  }, [isPaused, isCompleted, timer.duration]);
+  }, [isPaused, isCompleted]);
 
   useEffect(() => {
     for (const warning of timer.warnings) {
@@ -130,7 +144,7 @@ function TogglePlaybackButton({
 function AbortButton() {
   const router = useRouter();
   return (
-    <BorderlessButton onPress={() => router.navigate("/")}>
+    <BorderlessButton onPress={() => router.back()}>
       <View className="bg-gray-100 rounded-md pt-2 pb-2 pl-4 pr-4 flex-row justify-center border-solid border-2 border-gray-200 items-center">
         <SymbolView
           name="xmark"
