@@ -29,7 +29,9 @@
     "plugins": [
       "expo-font",
       "expo-asset",
-      "expo-router"
+      "expo-router",
+      "expo-audio",
+      "expo-build-properties"
     ]
   }
 }
