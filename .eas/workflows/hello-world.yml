@@ -7,9 +7,10 @@ on:
 jobs:
   Part 1:
     steps:
-      - run: echo "Hello, World (pt 2)"
+      - run: echo "Hello, World (pt 1)"
   Part 2:
-    steps:
+      needs: [Part 1]
+      steps:
       - run: echo "Hello, World (pt 2)"
   Part 3:
     needs: [Part 1, Part 2]

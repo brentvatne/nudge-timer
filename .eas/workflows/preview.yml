@@ -1,0 +1,19 @@
+name: Preview iOS app
+
+on:
+  push:
+    branches: ['*']
+
+jobs:
+  build-device:
+    name: "Ad hoc build"
+    type: build
+    params:
+      platform: ios
+      profile: preview-device
+  build-simulator:
+    name: "Simulator build"
+    type: build
+    params:
+      platform: ios
+      profile: preview-simulator

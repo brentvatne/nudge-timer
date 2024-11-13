@@ -18,7 +18,12 @@
       "distribution": "internal",
       "channel": "development"
     },
-    "preview": {
+    "preview-device": {
+      "extends": "base",
+      "distribution": "internal",
+      "channel": "preview"
+    },
+    "preview-simulator": {
       "extends": "base",
       "distribution": "internal",
       "channel": "preview",
