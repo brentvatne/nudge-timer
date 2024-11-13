@@ -5,6 +5,7 @@
   },
   "build": {
     "base": {
+      "image": "latest",
       "android": {
         "resourceClass": "large"
       },
