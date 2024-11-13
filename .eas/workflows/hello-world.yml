@@ -5,6 +5,13 @@ on:
     branches: ['*']
 
 jobs:
-  Hello World:
+  Part 1:
     steps:
-      - run: echo "Hello, World"
+      - run: echo "Hello, World (pt 2)"
+  Part 2:
+    steps:
+      - run: echo "Hello, World (pt 2)"
+  Part 3:
+    needs: [Part 1, Part 2]
+    steps:
+      - run: echo "Hello, World (pt 2)"
