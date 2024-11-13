@@ -1,0 +1,6 @@
+name: Hello World
+
+jobs:
+  Hello World:
+    steps:
+      - run: echo "Hello, World"
