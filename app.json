@@ -32,6 +32,21 @@
       "expo-router",
       "expo-audio",
       "expo-build-properties"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4da82272-2011-4b78-8805-33e4e48da6b4"
+      }
+    },
+    "owner": "brents",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/4da82272-2011-4b78-8805-33e4e48da6b4"
+    }
   }
 }
