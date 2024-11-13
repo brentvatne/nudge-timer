@@ -1,5 +1,9 @@
 name: Hello World
 
+on:
+  push:
+    branches: ['*']
+
 jobs:
   Hello World:
     steps:
